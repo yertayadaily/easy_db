@@ -1,0 +1,21 @@
+[
+  {
+    "posts": [
+      {
+        "key": "name",
+        "type": "date",
+        "value": "Hello, my name is Yertay"
+      },
+      {
+        "key": "name",
+        "type": "apps",
+        "value": "Hello, my name is Yertay"
+      },
+      {
+        "key": "name",
+        "type": "apps",
+        "value": "Hello, my name is Yertay"
+      }
+    ]
+  }
+]
