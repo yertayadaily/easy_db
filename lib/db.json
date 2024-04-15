@@ -1,0 +1,20 @@
+[
+  {
+    "key": "app",
+    "value": "My name is Yertay",
+    "type": "string",
+    "collection_name": "posts"
+  },
+  {
+    "key": "app",
+    "value": 1236,
+    "type": "int",
+    "collection_name": "posts"
+  },
+  {
+    "key": "app",
+    "value": "My name is Yertay",
+    "type": "string",
+    "collection_name": "posts"
+  }
+]

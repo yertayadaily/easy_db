@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:easy_db/models/models.dart';
-
 import 'collection_repository_interface.dart';
 
 class CollectionRepositoryImpl extends CollectionRepository {
@@ -15,7 +12,6 @@ class CollectionRepositoryImpl extends CollectionRepository {
   CollectionRepositoryImpl._(this.collectionName);
 
   final String collectionName;
-
   final List<CollectionData> data = [];
 
   @override
@@ -29,7 +25,7 @@ class CollectionRepositoryImpl extends CollectionRepository {
 
   @override
   Future<void> setString(String key, String value) async {
-    data.add(CollectionData(
+    data.add(StringData(
       key: key,
       value: value,
       collectionName: collectionName,
