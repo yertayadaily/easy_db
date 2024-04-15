@@ -1,6 +1,9 @@
-import 'package:easy_db/repositories/easy_db.dart';
+import 'package:easy_db/repositories/db.dart';
 
-void main() {
+void main() async {
   final db = EasyDb.instance.collection('posts');
 
+  db.setString('key1', 'App');
+  db.setString('key2', 'Ok');
+  db.setString('key3', 'Data');
 }
