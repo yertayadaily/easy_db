@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:easy_db/models/models.dart';
 import 'collection_repository_interface.dart';
 
@@ -16,19 +18,11 @@ class CollectionRepositoryImpl extends CollectionRepository {
 
   @override
   String getString(String key) {
-    try {
-      return data.firstWhere((element) => element.key == key).value.toString();
-    } catch (e) {
-      return '';
-    }
+    return '';
   }
 
   @override
   Future<void> setString(String key, String value) async {
-    data.add(StringData(
-      key: key,
-      value: value,
-      collectionName: collectionName,
-    ));
+    final db = File('db.json');
   }
 }
