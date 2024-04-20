@@ -1,6 +1,5 @@
-import 'dart:io';
-
 import 'package:easy_db/models/models.dart';
+import 'package:easy_db/repositories/file_repository_impl.dart';
 import 'collection_repository_interface.dart';
 
 class CollectionRepositoryImpl extends CollectionRepository {
@@ -23,6 +22,10 @@ class CollectionRepositoryImpl extends CollectionRepository {
 
   @override
   Future<void> setString(String key, String value) async {
-    final db = File('db.json');
+    FileRepositoryImpl.instance.write({
+      key: value,
+      'type': 'string',
+      'collection': collectionName,
+    });
   }
 }
