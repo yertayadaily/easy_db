@@ -6,7 +6,7 @@ import 'package:easy_db/repositories/file_repository.dart';
 class FileRepositoryImpl extends FileRepository {
   static final FileRepository _instance = FileRepositoryImpl._();
 
-  List<Map<String, dynamic>> _cachedData = [];
+  List<Map> _cachedData = [];
 
   static FileRepository get instance => _instance;
 
@@ -17,15 +17,15 @@ class FileRepositoryImpl extends FileRepository {
     final File file = File('db.json');
     final savedData = await file.readAsString();
 
-    final List data = jsonDecode(savedData);
+    final data = jsonDecode(savedData);
 
-    _cachedData = data.map<Map<String, dynamic>>((e) => jsonDecode(e)).toList();
+    _cachedData = data.map<Map>((e) => e).toList();
 
     return _cachedData;
   }
 
   @override
-  Future<void> write(Map<String, dynamic> data) async {
+  Future<void> write(Map data) async {
     _cachedData.add(data);
 
     await File('db.json').writeAsString(jsonEncode(_cachedData));
